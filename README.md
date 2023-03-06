@@ -4,4 +4,4 @@ Deploy the same subgraph to multiple Ethereum networks without duplicating all o
 Referring to: https://thegraph.com/docs/en/deploying/deploying-a-subgraph-to-hosted/#deploying-the-subgraph-to-multiple-ethereum-networks
 
 
-------  Under Development ------
+...  Under Development ...
