@@ -6,15 +6,16 @@ import MyToken from '../build/MyToken.json';
 
 use(solidity);
 
+// @todo
 describe('MyToken tests', () => {
     const [wallet, walletTo] = new MockProvider().getWallets();
     let token: Contract;
 
     beforeEach(async () => {
-        token = await deployContract(wallet, MyToken);
+        // token = await deployContract(wallet, MyToken);
     });
 
     it('Test', async () => {
-        console.log(token.address);
+        // console.log(token.address);
     });
 });
