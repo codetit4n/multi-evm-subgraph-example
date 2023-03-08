@@ -34,7 +34,7 @@ contract SubgraphNFT is ERC721, Ownable {
     function tokenURI(
         uint256 tokenId
     ) public view virtual override returns (string memory) {
-        require(_exists(tokenId), "ERC721ACollectionBase: Non Existent Token");
+        require(_exists(tokenId), "SubgraphNFT: Non Existent Token");
         string memory currentBaseURI = _baseURI();
         return (
             bytes(currentBaseURI).length > 0
