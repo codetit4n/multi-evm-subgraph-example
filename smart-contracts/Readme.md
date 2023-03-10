@@ -14,3 +14,7 @@ npm run build
 ```bash
 npm run test
 ```
+- Deploy contracts:
+```bash
+npm run deploy
+```

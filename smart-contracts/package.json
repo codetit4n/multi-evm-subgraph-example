@@ -6,7 +6,8 @@
   "scripts": {
     "build": "waffle",
     "clean": "rm -rf build cache",
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test mocha",
+    "deploy": "npx ts-node scripts/deploy.ts"
   },
   "keywords": [],
   "author": "codeTIT4N",
@@ -16,6 +17,7 @@
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
     "ethereum-waffle": "^4.0.10",
     "ethers": "^5.7.2",
     "mocha": "^10.2.0",
