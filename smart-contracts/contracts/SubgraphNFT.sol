@@ -8,6 +8,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract SubgraphNFT is ERC721, Ownable {
     using Strings for uint256;
     using Counters for Counters.Counter;
+    string public baseURI;
 
     Counters.Counter private _tokenIdCounter;
 
@@ -17,12 +18,8 @@ contract SubgraphNFT is ERC721, Ownable {
             _tokenIdCounter.increment();
             uint256 tokenId = _tokenIdCounter.current();
             _safeMint(premintOwners[i], tokenId);
+            baseURI = "https://ipfs.io/ipfs/QmZ5cimfzWZ754CYBaWd7UgRcfS9vGKztgpm96W26Qem6L/testNFTs/";
         }
-    }
-
-    function _baseURI() internal pure override returns (string memory) {
-        return
-            "https://ipfs.io/ipfs/QmZ5cimfzWZ754CYBaWd7UgRcfS9vGKztgpm96W26Qem6L/testNFTs/";
     }
 
     function safeMint(address to) public onlyOwner {
@@ -35,7 +32,7 @@ contract SubgraphNFT is ERC721, Ownable {
         uint256 tokenId
     ) public view virtual override returns (string memory) {
         require(_exists(tokenId), "SubgraphNFT: Non Existent Token");
-        string memory currentBaseURI = _baseURI();
+        string memory currentBaseURI = baseURI;
         return (
             bytes(currentBaseURI).length > 0
                 ? string(
@@ -47,5 +44,9 @@ contract SubgraphNFT is ERC721, Ownable {
                 )
                 : ""
         );
+    }
+
+    function setBaseURI(string memory _uri) external onlyOwner {
+        baseURI = _uri;
     }
 }

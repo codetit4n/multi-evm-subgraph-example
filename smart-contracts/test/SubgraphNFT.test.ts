@@ -31,9 +31,10 @@ describe('SubgraphNFT tests', () => {
         expect(token.address).to.not.equal(ethers.constants.AddressZero);
     });
 
-    it('Name, Symbol and Owner should be set correctly in the deployed contract', async () => {
+    it('Name, Symbol, baseURI and Owner should be set correctly in the deployed contract', async () => {
         expect(await token.name()).to.equal("SubgraphNFT");
         expect(await token.symbol()).to.equal("sNFT");
+        expect(await token.baseURI()).to.equal(baseURI);
         expect(await token.owner()).to.equal(owner.address);
     })
 
@@ -78,5 +79,20 @@ describe('SubgraphNFT tests', () => {
         expect(await token.ownerOf(toBn(7))).to.equal(gagan.address);
         expect(await token.balanceOf(gagan.address)).to.equal(toBn(1));
         expect(await token.tokenURI(toBn(7))).to.equal(baseURI + "7.json");
+    })
+
+    const newBaseURI = "https://new-uri.com/";
+
+    it('Should revert if someone other than the owner tries to change the base URI', async () => {
+        await expect(token.connect(bhuvan).setBaseURI(newBaseURI)).to.revertedWith('Ownable: caller is not the owner');
+    })
+
+    it('Owner should be able to change the base URI', async () => {
+        try {
+            await token.setBaseURI(newBaseURI);
+        } catch (err) {
+            console.log(err);
+        }
+        expect(await token.baseURI()).to.equal(newBaseURI);
     })
 });
