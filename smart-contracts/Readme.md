@@ -1,9 +1,12 @@
 # smart-contracts
 
-This is a waffle project containing the smart contracts and their scripts and tests.
+This is a simple ethereum-waffle project. It contains smart contracts, unit tests and scripts to deploy the smart contracts.
 
 ## Commands
 - Compile contracts:
+```bash
+npm run clean
+```
 ```bash
 npm run build
 ```
