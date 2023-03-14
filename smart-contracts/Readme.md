@@ -6,8 +6,6 @@ This is a simple ethereum-waffle project. It contains smart contracts, unit test
 - Compile contracts:
 ```bash
 npm run clean
-```
-```bash
 npm run build
 ```
 - Run tests:
