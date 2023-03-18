@@ -1,7 +1,7 @@
 import { ethers, getDefaultProvider, Wallet, } from 'ethers';
+import { abi as ABI, bytecode } from "../build/SubgraphNFT.json"
 import dotenv from 'dotenv'
 dotenv.config()
-import { abi as ABI, bytecode } from "../build/SubgraphNFT.json"
 
 /* This script deploys the contracts to the following chains:
     1. Ethereum Goerli testnet.
