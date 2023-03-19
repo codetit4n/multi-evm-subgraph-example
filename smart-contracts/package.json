@@ -8,7 +8,7 @@
     "clean": "rm -rf build cache",
     "test": "NODE_ENV=test mocha",
     "deploy": "npx ts-node scripts/deploy.ts",
-    "verify": "npx ts-node scripts/verify.ts"
+    "deploy_verify": "node scripts/deployAndVerify.js"
   },
   "keywords": [],
   "author": "codeTIT4N",
@@ -23,6 +23,7 @@
     "ethereum-waffle": "^4.0.10",
     "ethers": "^5.7.2",
     "mocha": "^10.2.0",
+    "solc": "0.8.17",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   }

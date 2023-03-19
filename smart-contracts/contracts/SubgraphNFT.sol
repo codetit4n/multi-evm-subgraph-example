@@ -12,15 +12,8 @@ contract SubgraphNFT is ERC721, Ownable {
 
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("SubgraphNFT", "sNFT") {
-        address[6] memory premintOwners = [
-            0xc9D506209f57948a0C0df6ED45621Fb47572Af99,
-            0x5F5AC73C6d6192bEe9d38eF6775A3C3EAAADFb39,
-            0x0cbe4714e34CA34D25B71DF73c682504190449Ff,
-            0x702750eD7eD3D8999B09a4d7ba3C64A21B43E63f,
-            0xbB36afDB0D75C84Ad0c92c763a53A3C13221960e,
-            0x153DC7907BC187C0a47Fb3d38A32c877d35A3502
-        ];
+    constructor(address[] memory premintOwners) ERC721("SubgraphNFT", "sNFT") {
+        require(premintOwners.length == 6, "Only 6 preminters allowed!");
         for (uint256 i = 0; i < 6; i++) {
             _tokenIdCounter.increment();
             uint256 tokenId = _tokenIdCounter.current();
