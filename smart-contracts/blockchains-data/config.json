@@ -1,0 +1,26 @@
+{
+    "eth_goerli": {
+        "rpc": "https://goerli.blockpi.network/v1/rpc/public",
+        "explorer_api": "https://api-goerli.etherscan.io/api"
+    },
+    "mumbai": {
+        "rpc": "https://polygon-mumbai.blockpi.network/v1/rpc/public",
+        "explorer_api": "https://api-testnet.polygonscan.com/api"
+    },
+    "optimism_goerli": {
+        "rpc": "https://goerli.optimism.io",
+        "explorer_api": "https://api-goerli-optimistic.etherscan.io/api"
+    },
+    "avax_fuji": {
+        "rpc": "https://rpc.ankr.com/avalanche_fuji",
+        "explorer_api": "https://api-testnet.snowtrace.io/api"
+    },
+    "fantom_testnet": {
+        "rpc": "https://rpc.testnet.fantom.network",
+        "explorer_api": "https://api-testnet.ftmscan.com/api"
+    },
+    "moonbase_alpha": {
+        "rpc": "https://rpc.api.moonbase.moonbeam.network",
+        "explorer_api": "https://api-moonbase.moonscan.io/api"
+    }
+}

@@ -12,7 +12,7 @@ npm run build
 ```bash
 npm run test
 ```
-- Deploy contracts:
+- Deploy and verify contract on all the chains:
 ```bash
-npm run deploy
+npm run deploy_verify
 ```
