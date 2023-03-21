@@ -1,0 +1,8 @@
+{
+    "eth_goerli": "0x3d9DFce23052A80B5cc0e23625f17e895513C7ee",
+    "mumbai": "0xc1e4a8286fB5f4Ab6C6a042c36387e8Ff879dc2d",
+    "optimism_goerli": "0xfc93121efa28cA9D6290674d71812C269E740034",
+    "avax_fuji": "0x1e21010A93FC5518849f5B5a364cAf5d4A7224e7",
+    "fantom_testnet": "0xfc93121efa28cA9D6290674d71812C269E740034",
+    "moonbase_alpha": "0x49885252404475b9af552130f6B0d0E112Def761"
+}

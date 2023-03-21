@@ -1,4 +1,4 @@
-// This script will verify smart contracts on all the chains.
+// This script will deploy and verify smart contracts on all the chains.
 // @note - Using JS instead of TS because solc-js don't have typescript declaration files
 const fs = require('fs')
 const dotenv = require('dotenv')
@@ -37,7 +37,9 @@ const premintOwners = [
 
 (async () => {
 
+
     if (etherscanKey && polygonscanKey && optimismEtherscanKey && snowtraceKey && ftmscanKey && moonscanKey) {
+        let dataToExport = {}
         const { abi, bytecode, standard_json_input } = getAbiBytecodeStdJsonInput()
 
         console.log("Ethereum Goerli:-");
@@ -49,6 +51,7 @@ const premintOwners = [
         if (verifyEthGoerli == null) {
             return;
         }
+        dataToExport['eth_goerli'] = deployedAddressEthGoerli;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Polygon Mumbai:-");
@@ -60,6 +63,7 @@ const premintOwners = [
         if (verifyMumbai == null) {
             return;
         }
+        dataToExport['mumbai'] = deployedAddressMumbai;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Optimism Goerli:-");
@@ -71,6 +75,7 @@ const premintOwners = [
         if (verifyOptGoerli == null) {
             return;
         }
+        dataToExport['optimism_goerli'] = deployedAddressOptGoerli;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Avalanche FUJI:-");
@@ -82,6 +87,7 @@ const premintOwners = [
         if (verifyFuji == null) {
             return;
         }
+        dataToExport['avax_fuji'] = deployedAddressFuji;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Fantom testnet:-");
@@ -93,6 +99,7 @@ const premintOwners = [
         if (verifyFantomTestnet == null) {
             return;
         }
+        dataToExport['fantom_testnet'] = deployedAddressFantomTestnet;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Moonbase Alpha:-");
@@ -104,11 +111,18 @@ const premintOwners = [
         if (verifyMoonbase == null) {
             return;
         }
+        dataToExport['moonbase_alpha'] = deployedAddressMoonbase;
         console.log("---------------------------------------------------------------------------------");
+        fs.writeFile("../deployed_addresses.json", JSON.stringify(dataToExport, null, 4), function (err) {
+            if (err) {
+                console.error("❌ Export to JSON failed!")
+                console.log(err);
+            }
+            console.log('✅ Deployed addresses exported to JSON');
+        });
     } else {
         console.error("❌ .env file do not have all the explorer keys!")
     }
-
 })()
 
 async function verifyContract(standard_json_input, explorer_api, explorer_key, contractAddress) {
@@ -159,6 +173,7 @@ async function deployContract(abi, bytecode, rpc) {
         console.log("✅ Deployed at: ", contract.address);
         return contract.address;
     } catch (err) {
+        console.log(err);
         console.log("❌ Deployment failed!");
         return null;
     }

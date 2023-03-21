@@ -7,7 +7,6 @@
     "build": "waffle",
     "clean": "rm -rf build cache",
     "test": "NODE_ENV=test mocha",
-    "deploy": "npx ts-node scripts/deploy.ts",
     "deploy_verify": "node scripts/deployAndVerify.js"
   },
   "keywords": [],
