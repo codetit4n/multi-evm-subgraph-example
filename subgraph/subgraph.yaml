@@ -1,0 +1,33 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SubgraphNFT
+    network: goerli
+    source:
+      address: "0x3d9DFce23052A80B5cc0e23625f17e895513C7ee"
+      abi: SubgraphNFT
+      startBlock: 8694164
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - OwnershipTransferred
+        - Transfer
+      abis:
+        - name: SubgraphNFT
+          file: ./abis/SubgraphNFT.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/subgraph-nft.ts
