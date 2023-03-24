@@ -39,86 +39,147 @@ const premintOwners = [
 
 
     if (etherscanKey && polygonscanKey && optimismEtherscanKey && snowtraceKey && ftmscanKey && moonscanKey) {
-        let dataToExport = {}
+        let dataToExport = {} // for networks.json in subgraph
         const { abi, bytecode, standard_json_input } = getAbiBytecodeStdJsonInput()
 
         console.log("Ethereum Goerli:-");
-        const deployedAddressEthGoerli = await deployContract(abi, bytecode, config.eth_goerli.rpc);
-        if (deployedAddressEthGoerli == null) {
+        const deploymentGoerli = await deployContract(abi, bytecode, config.eth_goerli.rpc);
+        if (deploymentGoerli == null) {
             return;
         }
+        const deployedAddressEthGoerli = deploymentGoerli.deployedAddress;
+        const startBlockGoerli = deploymentGoerli.startBlock;
         const verifyEthGoerli = await verifyContract(standard_json_input, config.eth_goerli.explorer_api, etherscanKey, deployedAddressEthGoerli);
         if (verifyEthGoerli == null) {
             return;
         }
-        dataToExport['eth_goerli'] = deployedAddressEthGoerli;
+
+        dataToExport['goerli'] = {
+            "SubgraphNFT": {
+                "address": deployedAddressEthGoerli,
+                "startBlock": startBlockGoerli
+            }
+        }
+
+
+        // dataToExport['goerli']['SubgraphNFT']['address'] = deployedAddressEthGoerli;
+        // dataToExport['goerli']['SubgraphNFT']['startBlock'] = startBlockGoerli;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Polygon Mumbai:-");
-        const deployedAddressMumbai = await deployContract(abi, bytecode, config.mumbai.rpc);
-        if (deployedAddressMumbai == null) {
+        const deploymentMumbai = await deployContract(abi, bytecode, config.mumbai.rpc);
+        if (deploymentMumbai == null) {
             return;
         }
+        const deployedAddressMumbai = deploymentMumbai.deployedAddress;
+        const startBlockMumbai = deploymentMumbai.startBlock;
         const verifyMumbai = await verifyContract(standard_json_input, config.mumbai.explorer_api, polygonscanKey, deployedAddressMumbai);
         if (verifyMumbai == null) {
             return;
         }
-        dataToExport['mumbai'] = deployedAddressMumbai;
+        dataToExport['mumbai'] = {
+            "SubgraphNFT": {
+                "address": deployedAddressMumbai,
+                "startBlock": startBlockMumbai
+            }
+        }
+        // dataToExport['mumbai']['SubgraphNFT']['address'] = deployedAddressMumbai;
+        // dataToExport['mumbai']['SubgraphNFT']['startBlock'] = startBlockMumbai;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Optimism Goerli:-");
-        const deployedAddressOptGoerli = await deployContract(abi, bytecode, config.optimism_goerli.rpc);
-        if (deployedAddressOptGoerli == null) {
+        const deploymentOptGoerli = await deployContract(abi, bytecode, config.optimism_goerli.rpc);
+        if (deploymentOptGoerli == null) {
             return;
         }
+        const deployedAddressOptGoerli = deploymentOptGoerli.deployedAddress;
+        const startBlockOptGoerli = deploymentOptGoerli.startBlock;
         const verifyOptGoerli = await verifyContract(standard_json_input, config.optimism_goerli.explorer_api, optimismEtherscanKey, deployedAddressOptGoerli);
         if (verifyOptGoerli == null) {
             return;
         }
-        dataToExport['optimism_goerli'] = deployedAddressOptGoerli;
+
+        dataToExport['optimism-goerli'] = {
+            "SubgraphNFT": {
+                "address": deployedAddressOptGoerli,
+                "startBlock": startBlockOptGoerli
+            }
+        }
+
+        // dataToExport['optimism-goerli']['SubgraphNFT']['address'] = deployedAddressOptGoerli;
+        // dataToExport['optimism-goerli']['SubgraphNFT']['startBlock'] = startBlockOptGoerli;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Avalanche FUJI:-");
-        const deployedAddressFuji = await deployContract(abi, bytecode, config.avax_fuji.rpc);
-        if (deployedAddressFuji == null) {
+        const deploymentFuji = await deployContract(abi, bytecode, config.avax_fuji.rpc);
+        if (deploymentFuji == null) {
             return;
         }
+        const deployedAddressFuji = deploymentFuji.deployedAddress;
+        const startBlockFuji = deploymentFuji.startBlock;
         const verifyFuji = await verifyContract(standard_json_input, config.avax_fuji.explorer_api, snowtraceKey, deployedAddressFuji);
         if (verifyFuji == null) {
             return;
         }
-        dataToExport['avax_fuji'] = deployedAddressFuji;
+
+        dataToExport['fuji'] = {
+            "SubgraphNFT": {
+                "address": deployedAddressFuji,
+                "startBlock": startBlockFuji
+            }
+        }
+
+        // dataToExport['fuji']['SubgraphNFT']['address'] = deployedAddressFuji;
+        // dataToExport['fuji']['SubgraphNFT']['startBlock'] = startBlockFuji;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Fantom testnet:-");
-        const deployedAddressFantomTestnet = await deployContract(abi, bytecode, config.fantom_testnet.rpc);
-        if (deployedAddressFantomTestnet == null) {
+        const deploymentFantomTestnet = await deployContract(abi, bytecode, config.fantom_testnet.rpc);
+        if (deploymentFantomTestnet == null) {
             return;
         }
+        const deployedAddressFantomTestnet = deploymentFantomTestnet.deployedAddress;
+        const startBlockFantomTestnet = deploymentFantomTestnet.startBlock;
         const verifyFantomTestnet = await verifyContract(standard_json_input, config.fantom_testnet.explorer_api, ftmscanKey, deployedAddressFantomTestnet);
         if (verifyFantomTestnet == null) {
             return;
         }
-        dataToExport['fantom_testnet'] = deployedAddressFantomTestnet;
+
+        dataToExport['fantom-testnet'] = {
+            "SubgraphNFT": {
+                "address": deployedAddressFantomTestnet,
+                "startBlock": startBlockFantomTestnet
+            }
+        }
+
+        // dataToExport['fantom-testnet']['SubgraphNFT']['address'] = deployedAddressFantomTestnet;
+        // dataToExport['fantom-testnet']['SubgraphNFT']['startBlock'] = startBlockFantomTestnet;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Moonbase Alpha:-");
-        const deployedAddressMoonbase = await deployContract(abi, bytecode, config.moonbase_alpha.rpc);
-        if (deployedAddressMoonbase == null) {
+        const deploymentMoonbase = await deployContract(abi, bytecode, config.moonbase_alpha.rpc);
+        if (deploymentMoonbase == null) {
             return;
         }
+        const deployedAddressMoonbase = deploymentMoonbase.deployedAddress;
+        const startBlockMoonbase = deploymentMoonbase.startBlock;
         const verifyMoonbase = await verifyContract(standard_json_input, config.moonbase_alpha.explorer_api, moonscanKey, deployedAddressMoonbase);
         if (verifyMoonbase == null) {
             return;
         }
-        dataToExport['moonbase_alpha'] = deployedAddressMoonbase;
+        dataToExport['mbase'] = {
+            "SubgraphNFT": {
+                "address": deployedAddressMoonbase,
+                "startBlock": startBlockMoonbase
+            }
+        }
         console.log("---------------------------------------------------------------------------------");
-        fs.writeFile("../deployed_addresses.json", JSON.stringify(dataToExport, null, 4), function (err) {
+        fs.writeFile("../subgraph/networks.json", JSON.stringify(dataToExport, null, 2), function (err) {
             if (err) {
                 console.error("❌ Export to JSON failed!")
                 console.log(err);
             }
-            console.log('✅ Deployed addresses exported to JSON');
+            console.log('✅ Deployed addresses exported to networks.json for the subgraph');
         });
     } else {
         console.error("❌ .env file do not have all the explorer keys!")
@@ -169,9 +230,11 @@ async function deployContract(abi, bytecode, rpc) {
         const signer = wallet.connect(provider);
         const factory = new ethers.ContractFactory(abi, bytecode, signer);
         const contract = await factory.connect(signer).deploy(premintOwners)
-        await contract.deployTransaction.wait(6);
-        console.log("✅ Deployed at: ", contract.address);
-        return contract.address;
+        const startBlock = await provider.getBlockNumber(contract.deployTransaction.hash);
+        await contract.deployTransaction.wait(4);
+        const deployedAddress = contract.address;
+        console.log("✅ Deployed at: ", deployedAddress);
+        return { deployedAddress, startBlock };
     } catch (err) {
         console.log(err);
         console.log("❌ Deployment failed!");
