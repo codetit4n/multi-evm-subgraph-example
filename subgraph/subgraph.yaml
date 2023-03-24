@@ -6,9 +6,9 @@ dataSources:
     name: SubgraphNFT
     network: goerli
     source:
-      address: "0x3d9DFce23052A80B5cc0e23625f17e895513C7ee"
       abi: SubgraphNFT
-      startBlock: 8694164
+      address: "0xf52011A429888DB5E27f710a9c5C4b9c8a4Ec4fF"
+      startBlock: 8711057
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6

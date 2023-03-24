@@ -1,7 +1,38 @@
 {
   "goerli": {
     "SubgraphNFT": {
-      "address": "0x3d9DFce23052A80B5cc0e23625f17e895513C7ee"
+      "address": "0xf52011A429888DB5E27f710a9c5C4b9c8a4Ec4fF",
+      "startBlock": 8711057
+    }
+  },
+  "mumbai": {
+    "SubgraphNFT": {
+      "address": "0x27494641E70285cB8CD9cb25036B6C9aA847088A",
+      "startBlock": 33516607
+    }
+  },
+  "optimism-goerli": {
+    "SubgraphNFT": {
+      "address": "0x7e74AEC94633cBD97304725980f7E6d1048F69f0",
+      "startBlock": 7124715
+    }
+  },
+  "fuji": {
+    "SubgraphNFT": {
+      "address": "0x8e573aa46d35Aa885c4Eaf4BF05b964A3c719776",
+      "startBlock": 20200128
+    }
+  },
+  "fantom-testnet": {
+    "SubgraphNFT": {
+      "address": "0xfD8A6f05d6cE73140322b9fcc43c6A9372358D44",
+      "startBlock": 14638261
+    }
+  },
+  "mbase": {
+    "SubgraphNFT": {
+      "address": "0x1Dd5Ee08A759059E0E7734C9d2e4FEde0eD5F865",
+      "startBlock": 4005691
     }
   }
 }

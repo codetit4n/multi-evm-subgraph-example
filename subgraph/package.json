@@ -1,18 +1,21 @@
 {
-  "name": "subgraphnft-eth-goerli",
-  "license": "UNLICENSED",
+  "name": "subgraphnft",
+  "license": "MIT",
   "scripts": {
     "codegen": "graph codegen",
-    "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ codetit4n/subgraphnft-eth-goerli",
-    "create-local": "graph create --node http://localhost:8020/ codetit4n/subgraphnft-eth-goerli",
-    "remove-local": "graph remove --node http://localhost:8020/ codetit4n/subgraphnft-eth-goerli",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 codetit4n/subgraphnft-eth-goerli",
-    "test": "graph test"
+    "auth": "AUTH_TOKEN=$(grep THEGRAPH_AUTH_TOKEN .env | cut -d '=' -f2) && graph auth --product hosted-service $AUTH_TOKEN",
+    "deploy_eth_goerli": "SUBGRAPH_SLUG=$(grep ETH_GOERLI_SUBGRAPH_SLUG .env | cut -d '=' -f2) && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_SLUG --network goerli",
+    "deploy_mumbai": "SUBGRAPH_SLUG=$(grep MUMBAI_SUBGRAPH_SLUG .env | cut -d '=' -f2) && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_SLUG --network mumbai",
+    "deploy_opt_goerli": "SUBGRAPH_SLUG=$(grep OPT_GOERLI_SUBGRAPH_SLUG .env | cut -d '=' -f2) && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_SLUG --network optimism-goerli",
+    "deploy_avax_fuji": "SUBGRAPH_SLUG=$(grep FUJI_SUBGRAPH_SLUG .env | cut -d '=' -f2) && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_SLUG --network fuji",
+    "deploy_fantom_testnet": "SUBGRAPH_SLUG=$(grep FANTOM_TESTNET_SLUG .env | cut -d '=' -f2) && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_SLUG --network fantom-testnet",
+    "deploy_moonbase": "SUBGRAPH_SLUG=$(grep MOONBASE_SLUG .env | cut -d '=' -f2) && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_SLUG --network mbase"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.33.1",
     "@graphprotocol/graph-ts": "0.27.0"
   },
-  "devDependencies": { "matchstick-as": "0.5.0" }
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
 }
