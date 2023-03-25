@@ -18,10 +18,10 @@ npm run build
 ```bash
 npm run test
 ```
-- Deploy and verify contract on all the chains:
+- Deploy, verify contract on all the chains and generate the <a href='/subgraph/networks.json'>networks.json</a> for the subgraph:
 ```bash
 npm run deploy_verify
 ```
 > Make sure you have enough funds on all the chains before running this script.
 
-> This script will deploy and verify the smart contract on all the above mentioned chains and create a json file with all the deployed addresses which can be then found in the parent directory.
+> This script will deploy and verify the smart contract on all the above mentioned chains and create the `networks.json` for the subgraph.

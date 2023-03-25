@@ -1,4 +1,6 @@
 // This script will deploy and verify smart contracts on all the chains.
+// After this it will store the latest addresses and start block number in the subgraph folder,
+// which can be used to deploy subgraphs on every blockchain network.
 // @note - Using JS instead of TS because solc-js don't have typescript declaration files
 const fs = require('fs')
 const dotenv = require('dotenv')
