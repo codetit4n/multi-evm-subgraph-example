@@ -9,6 +9,10 @@ This is a simple ethereum-waffle project. It contains smart contracts, unit test
 6. Moonbase Alpha - Moonbeam's testnet
 
 ## Commands
+- Install `node_modules`:
+```bash
+npm i
+```
 - Compile contracts:
 ```bash
 npm run clean
@@ -27,4 +31,4 @@ npm run deploy_verify
 > This script will deploy and verify the smart contract on all the above mentioned chains and create the `networks.json` for the subgraph.
 
 If everything goes fine, running this should give an output like:
-<img width="917" alt="deploy_verify" src="https://user-images.githubusercontent.com/71545386/227726565-ab514afd-ec47-4eb0-95e1-2ec6c06d5c7b.png">
+<img width="500" height="400" alt="deploy_verify" src="https://user-images.githubusercontent.com/71545386/227726565-ab514afd-ec47-4eb0-95e1-2ec6c06d5c7b.png">

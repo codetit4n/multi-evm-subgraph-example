@@ -49,3 +49,6 @@ Step 6: To deploy same subgraph on various blockchain networks do:
 4. Avalanche FUJI testnet: `yarn deploy_avax_fuji`
 5. Fantom testnet: `yarn deploy_fantom_testnet`
 6. Moonbase Alpha: `yarn deploy_moonbase`
+
+### Credits
+ERC721 subgraph: https://github.com/schmidsi/generic-erc721-subgraph

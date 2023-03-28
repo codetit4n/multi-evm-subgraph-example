@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: SubgraphNFT
-    network: goerli
+    network: fantom-testnet
     source:
       abi: SubgraphNFT
-      address: "0xf52011A429888DB5E27f710a9c5C4b9c8a4Ec4fF"
-      startBlock: 8711057
+      address: "0xfD8A6f05d6cE73140322b9fcc43c6A9372358D44"
+      startBlock: 14638261
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
