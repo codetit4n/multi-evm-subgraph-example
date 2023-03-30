@@ -22,7 +22,7 @@ npm run build
 ```bash
 npm run test
 ```
-- Deploy, verify contract on all the chains and generate the <a href='/subgraph/networks.json'>networks.json</a> for the subgraph:
+- Deploy, verify contracts on all the chains and generate the <a href='/subgraph/networks.json'>networks.json</a> for the subgraph:
 ```bash
 npm run deploy_verify
 ```
@@ -31,4 +31,5 @@ npm run deploy_verify
 > This script will deploy and verify the smart contract on all the above mentioned chains and create the `networks.json` for the subgraph.
 
 If everything goes fine, running this should give an output like:
+
 <img width="500" height="400" alt="deploy_verify" src="https://user-images.githubusercontent.com/71545386/227726565-ab514afd-ec47-4eb0-95e1-2ec6c06d5c7b.png">

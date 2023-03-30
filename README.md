@@ -18,7 +18,7 @@ This project contains 2 parts:
 
 ## Example subgraphs:
 
-`NOTE: This is the same subgraph deplpyed to all the blockchain networks.`
+`NOTE: This is the same subgraph deployed to all the blockchain networks.`
 1. https://thegraph.com/hosted-service/subgraph/codetit4n/subgraphnft-eth-goerli
 2. https://thegraph.com/hosted-service/subgraph/codetit4n/subgraphnft-mumbai
 3. https://thegraph.com/hosted-service/subgraph/codetit4n/subgraphnft-opt-goerli

@@ -63,9 +63,6 @@ const premintOwners = [
             }
         }
 
-
-        // dataToExport['goerli']['SubgraphNFT']['address'] = deployedAddressEthGoerli;
-        // dataToExport['goerli']['SubgraphNFT']['startBlock'] = startBlockGoerli;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Polygon Mumbai:-");
@@ -85,8 +82,7 @@ const premintOwners = [
                 "startBlock": startBlockMumbai
             }
         }
-        // dataToExport['mumbai']['SubgraphNFT']['address'] = deployedAddressMumbai;
-        // dataToExport['mumbai']['SubgraphNFT']['startBlock'] = startBlockMumbai;
+
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Optimism Goerli:-");
@@ -108,8 +104,6 @@ const premintOwners = [
             }
         }
 
-        // dataToExport['optimism-goerli']['SubgraphNFT']['address'] = deployedAddressOptGoerli;
-        // dataToExport['optimism-goerli']['SubgraphNFT']['startBlock'] = startBlockOptGoerli;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Avalanche FUJI:-");
@@ -131,8 +125,6 @@ const premintOwners = [
             }
         }
 
-        // dataToExport['fuji']['SubgraphNFT']['address'] = deployedAddressFuji;
-        // dataToExport['fuji']['SubgraphNFT']['startBlock'] = startBlockFuji;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Fantom testnet:-");
@@ -154,8 +146,6 @@ const premintOwners = [
             }
         }
 
-        // dataToExport['fantom-testnet']['SubgraphNFT']['address'] = deployedAddressFantomTestnet;
-        // dataToExport['fantom-testnet']['SubgraphNFT']['startBlock'] = startBlockFantomTestnet;
         console.log("---------------------------------------------------------------------------------");
 
         console.log("Moonbase Alpha:-");
